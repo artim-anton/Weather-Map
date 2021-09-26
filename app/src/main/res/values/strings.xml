@@ -2,5 +2,6 @@
     <string name="app_name">Weather-Map</string>
     <string name="base_url">"http://openweathermap.org/img/wn/"</string>
     <string name="end_url">"@2x.png"</string>
+    <string name="check_internet_con">Проверьте соединение с Интернетом</string>
 
 </resources>

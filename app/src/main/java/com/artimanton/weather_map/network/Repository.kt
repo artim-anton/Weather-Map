@@ -1,11 +1,9 @@
-package com.artimanton.weather_map
+package com.artimanton.weather_map.network
 
-import android.widget.ImageView
 import androidx.lifecycle.MutableLiveData
 import com.artimanton.weather_map.model.Weather
 import com.artimanton.wiki.retrofit.Common
 import com.artimanton.wiki.retrofit.RetrofitServices
-import com.bumptech.glide.Glide
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

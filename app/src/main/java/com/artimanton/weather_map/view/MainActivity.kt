@@ -22,17 +22,7 @@ class MainActivity : AppCompatActivity() {
             this.viewmodel = mainViewModel
         }
 
-
-        mainViewModel.callApi()
-        //mainViewModel.imageUrlUpdated("http://openweathermap.org/img/wn/04d@2x.png")
-        observeResponseData()
-    }
-
-    private fun observeResponseData() {
-
-        mainViewModel.liveData.observe(this, Observer { data ->
-            mainViewModel.imageUrlUpdated("http://openweathermap.org/img/wn/"+data.weather[0].icon+"@2x.png")
-        })
+        mainViewModel.appContext(this)
     }
 
 
