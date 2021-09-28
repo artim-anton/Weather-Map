@@ -3,7 +3,7 @@ package com.artimanton.weather_map.network
 import androidx.lifecycle.MutableLiveData
 import com.artimanton.weather_map.model.Weather
 import com.artimanton.wiki.retrofit.Common
-import com.artimanton.wiki.retrofit.RetrofitServices
+import com.artimanton.wiki.retrofit.RetrofitService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -11,8 +11,8 @@ import retrofit2.Response
 
 
 object Repository {
-    private var mService: RetrofitServices = Common.retrofitService
-    fun callMyRetrofitApi(liveData: MutableLiveData<Weather>, city:String) {
+    private var mService: RetrofitService = Common.retrofitService
+    fun loadWeather(liveData: MutableLiveData<Weather>, city:String) {
         mService.getWeather(city)?.enqueue( object : Callback<Weather?> {
             override fun onFailure(call: Call<Weather?>, t: Throwable) {
 

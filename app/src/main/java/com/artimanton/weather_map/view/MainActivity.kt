@@ -15,12 +15,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.artimanton.weather_map.R.layout.activity_main)
 
-        binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, com.artimanton.weather_map.R.layout.activity_main).apply {
-            this.setLifecycleOwner(this@MainActivity)
-            this.viewmodel = mainViewModel
-        }
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,com.artimanton.weather_map.R.layout.activity_main)
+        binding.setLifecycleOwner(this)
+        binding.viewmodel = ViewModelProvider(this).get(MainViewModel::class.java)
+
 
         mainViewModel.appContext(this)
     }

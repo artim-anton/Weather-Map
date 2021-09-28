@@ -23,7 +23,7 @@ class MainViewModel() : ViewModel() {
 
     fun callApi() {
         if(isNetworkAvailable(context)) {
-            editTextContent.value?.let { myRepository.callMyRetrofitApi(liveData, it) }
+            editTextContent.value?.let { myRepository.loadWeather(liveData, it) }
         }else{
             Toast.makeText(context, context.getString(R.string.check_internet_con), Toast.LENGTH_SHORT).show()
         }
